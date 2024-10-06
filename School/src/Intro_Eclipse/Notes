@@ -1,0 +1,47 @@
+
+    private JTextField nameFeld, hundNameFeld, rasseFeld, gewichtFeld;
+    private JComboBox<Integer> gassiComboBox, essenComboBox, tageComboBox;
+    private JButton speichernButton;
+    private JPanel eingabePanel, ergebnisPanel;
+    private double[] gewichtVerlauf;
+
+
+            eingabePanel.add(new JLabel("Wie oft Gassi gehen (0 bis 6):"));
+            gassiComboBox = new JComboBox<>(new Integer[]{0, 1, 2, 3, 4, 5, 6});
+            eingabePanel.add(gassiComboBox);
+
+setTitle("Hund-Programm");
+setSize(600, 500);
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+setLayout(new BorderLayout());
+
+eingabePanel = new JPanel(); // x belibige panalal
+
+
+JLabel nameLabel = new JLabel("Dein Name:");
+nameLabel.setBounds(20, 60, 100, 30);
+add(nameLabel);
+
+        speichernButton = new JButton("Speichern");
+        speichernButton.addActionListener(new SpeichernActionListener());
+        eingabePanel.add(new JLabel(""));
+        eingabePanel.add(speichernButton);
+
+ private class SpeichernActionListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
+    }
+ergebnisPanel.setVisible(true);
+
+revalidate();
+repaint();
+
+
+public static void main(String[] args) {
+    SwingUtilities.invokeLater(() -> {
+        HundProgramm hundProgramm = new HundProgramm();
+        hundProgramm.setVisible(true);
+    });
+}
